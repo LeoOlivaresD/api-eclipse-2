@@ -31,12 +31,20 @@ public class AutoImplService {
 		return repoAuto.findById(id);
 	}
 
-	public Optional<Auto> buscarPorColor(String color) {
+	public List<Auto> buscarPorColor(String color) {
 		return repoAuto.findByColor(color);
 	}
 
-	public Optional<Auto> buscarPorMarca(String marca) {
+	public List<Auto> buscarPorMarca(String marca) {
 		return repoAuto.findByMarca(marca);
+	}
+
+	public List<Auto> buscarPorAnio(Long anio) {
+		return repoAuto.findByAnio(anio);
+	}
+
+	public List<Auto> buscarPorModelo(String modelo) {
+		return repoAuto.findByModelo(modelo);
 	}
 
 	public void actualizarAuto(Auto auto) {
