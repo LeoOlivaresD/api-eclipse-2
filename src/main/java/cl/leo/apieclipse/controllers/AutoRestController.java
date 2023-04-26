@@ -32,24 +32,34 @@ public class AutoRestController {
 		autoService.crearAuto(auto);
 	}
 
-	@GetMapping(value = "listar", headers = "Accept = application/json")
+	@GetMapping(value = "listar", headers = "Accept=application/json")
 	public List<Auto> listarAutos() {
 		return autoService.listaAutos();
 	}
 
-	@GetMapping(value = "listar/{id}", headers = "Accept=application/json")
+	@GetMapping(value = "listarId/{id}", headers = "Accept=application/json")
 	public Optional<Auto> filtratAutoPorId(@PathVariable Long id) {
 		return autoService.buscarAutoPorId(id);
 	}
 
-	@GetMapping(value = "listar/{marca}", headers = "Accept=application/json")
-	public Optional<Auto> bucarPorMarca(@PathVariable String marca) {
+	@GetMapping(value = "listarMarca/{marca}", headers = "Accept=application/json")
+	public List<Auto> bucarPorMarca(@PathVariable String marca) {
 		return autoService.buscarPorMarca(marca);
 	}
 
-	@GetMapping(value = "listar/{color}", headers = "Accept=application/json")
-	public Optional<Auto> buscarPorColor(@PathVariable String color) {
+	@GetMapping(value = "listarColor/{color}", headers = "Accept=application/json")
+	public List<Auto> buscarPorColor(@PathVariable String color) {
 		return autoService.buscarPorColor(color);
+	}
+
+	@GetMapping(value = "listarModelo/{modelo}", headers = "Accept=application/json")
+	public List<Auto> buscarPorModelo(@PathVariable String modelo) {
+		return autoService.buscarPorModelo(modelo);
+	}
+
+	@GetMapping(value = "listarAnio/{anio}", headers = "Accept=application/json")
+	public List<Auto> buscarPorAnio(@PathVariable Long anio) {
+		return autoService.buscarPorAnio(anio);
 	}
 
 	@PutMapping(value = "actualizar", headers = "Accept=application/json")
