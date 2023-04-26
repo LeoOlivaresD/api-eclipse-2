@@ -1,5 +1,6 @@
 package cl.leo.apieclipse.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,8 +10,8 @@ import cl.leo.apieclipse.models.Auto;
 
 @Repository
 public interface IAutoRepository extends JpaRepository<Auto, Long> {
-	Optional<Auto> findByMarca(String marca);
-	Optional<Auto> findByModelo(String modelo);
-	Optional<Auto> findByAnio(Long anio);
-	Optional<Auto> findByColor(String color);
+	List<Auto> findByMarca(String marca);
+	List<Auto> findByModelo(String modelo);
+	List<Auto> findByAnio(Long anio);
+	List<Auto> findByColor(String color);
 }
